@@ -1,16 +1,33 @@
 
 public class Town {
 	private String name;
-	private Shop shop;
+	private Building[] bld; 
+	private String adjective; 
 	
 	public Town() {
 		name = "";
-		shop = new Shop();
+		adjective = "";
 	}
 	
-	public Town(String name, Shop shop) {
+	public Town(String name, Building[] bldgs, String adj) {
 		this.name = name;
-		this.shop = shop;
+		bld = bldgs; 
+		adjective = adj; 
+	}
+	
+	public void printTown() {
+		System.out.print("You enter a " + adjective + " Town.");
+	}
+	
+	public void printBuildings(){
+		System.out.print("This Town contains a ");
+		for(int i = 0; i < bld.length; i++){
+			System.out.print(bld[i].getName());
+			System.out.print("and a ");
+			if(i == bld.length - 1) {
+				System.out.println("."); 
+			}
+		}
 	}
 	
 	public String getName() {
@@ -21,11 +38,4 @@ public class Town {
 		this.name = name;
 	}
 	
-	public Shop getShop() {
-		return shop;
-	}
-	
-	public void setShop(Shop shop) {
-		this.shop = shop;
-	}
 }

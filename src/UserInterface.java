@@ -23,4 +23,17 @@ public class UserInterface {
 			player.setLevel(99);
 		}
 	}
+	
+	public void start(){
+		if(ui.next().toLowerCase().equals("north")){
+			map.roomNorth();
+		}else if(ui.next().toLowerCase().equals("south")){
+			map.roomSouth();
+		}else if(ui.next().toLowerCase().equals("east")){
+			map.roomEast();
+		}else if(ui.next().toLowerCase().equals("west")){
+			map.roomWest();
+		}
+	}
+	
 }
